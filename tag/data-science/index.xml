@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects | Mai Le</title>
-    <link>https://lephanthuymai.github.io/project/</link>
-      <atom:link href="https://lephanthuymai.github.io/project/index.xml" rel="self" type="application/rss+xml" />
-    <description>Projects</description>
+    <title>Data Science | Mai Le</title>
+    <link>https://lephanthuymai.github.io/tag/data-science/</link>
+      <atom:link href="https://lephanthuymai.github.io/tag/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <description>Data Science</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2020 by Mai Le.</copyright><lastBuildDate>Mon, 21 Dec 2020 11:51:55 +0700</lastBuildDate>
     <image>
       <url>https://lephanthuymai.github.io/images/icon_huecf101d77c4d50fee89da6355e975757_514918_512x512_fill_lanczos_center_2.png</url>
-      <title>Projects</title>
-      <link>https://lephanthuymai.github.io/project/</link>
+      <title>Data Science</title>
+      <link>https://lephanthuymai.github.io/tag/data-science/</link>
     </image>
     
     <item>
