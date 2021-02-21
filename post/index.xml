@@ -14,9 +14,9 @@
     
     <item>
       <title>Surviving a 7-Scrum-Team Project</title>
-      <link>https://lephanthuymai.github.io/post/surving-a-7-scrum-team-project/</link>
+      <link>https://lephanthuymai.github.io/post/surving-a-7-Scrum-team-project/</link>
       <pubDate>Fri, 08 Jan 2021 14:36:15 +0700</pubDate>
-      <guid>https://lephanthuymai.github.io/post/surving-a-7-scrum-team-project/</guid>
+      <guid>https://lephanthuymai.github.io/post/surving-a-7-Scrum-team-project/</guid>
       <description>&lt;p&gt;I was a Director of Delivery in an outsourcing firm when we got an opportunity to work with this client, let&amp;rsquo;s call them Company H, they would like to build a new generation restaurant management system as a software-as-a-service platform. My role was both Account Manager and Program Manager for this client, I gave the team&amp;rsquo;s overall direction, resolved cross-team impediments, reported the overall status and risks to the PMO and Steering Committee.&lt;/p&gt;
 &lt;p&gt;The project started with 2 Scrum Teams then eventually grew to 7 Scrum Teams working on a &lt;strong&gt;single&lt;/strong&gt; product backlog.&lt;/p&gt;
 &lt;p&gt;Just like other programs with multiple Scrum teams working on the same product backlog, we experienced the great challenge of dependency and integration hell, on top of that, we also got distributed team situation in which the teams were 14 hours difference from the PO&amp;rsquo;s timezone and the outsourcing nature (tightly bound by contractual terms and sometimes lack of trust). In order to make our life easier, we chose to apply &lt;a href=&#34;https://www.scrum.org/scaled-professional-scrum-nexus-practices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Nexus&lt;/a&gt; framework with adaptations to ensure multiple team&amp;rsquo;s works resulted in an integrated product. The model was not perfect but it was the best we could do at the time considering our constraints.&lt;/p&gt;
