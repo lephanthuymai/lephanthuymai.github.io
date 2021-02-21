@@ -5,12 +5,20 @@
     <link>https://lephanthuymai.github.io/</link>
       <atom:link href="https://lephanthuymai.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Mai Le</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021 by Mai Le.</copyright><lastBuildDate>Mon, 21 Dec 2020 11:51:55 +0700</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021 by Mai Le.</copyright><lastBuildDate>Sun, 21 Feb 2021 13:27:36 +0700</lastBuildDate>
     <image>
       <url>https://lephanthuymai.github.io/images/icon_huecf101d77c4d50fee89da6355e975757_514918_512x512_fill_lanczos_center_2.png</url>
       <title>Mai Le</title>
       <link>https://lephanthuymai.github.io/</link>
     </image>
+    
+    <item>
+      <title>Covid 19 Data Portal</title>
+      <link>https://lephanthuymai.github.io/project/covid-19-data-portal/</link>
+      <pubDate>Sun, 21 Feb 2021 13:27:36 +0700</pubDate>
+      <guid>https://lephanthuymai.github.io/project/covid-19-data-portal/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Online Purchase Intention Prediction</title>
