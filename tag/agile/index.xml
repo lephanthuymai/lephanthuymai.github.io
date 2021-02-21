@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts | Mai Le</title>
-    <link>https://lephanthuymai.github.io/post/</link>
-      <atom:link href="https://lephanthuymai.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    <description>Posts</description>
+    <title>Agile | Mai Le</title>
+    <link>https://lephanthuymai.github.io/tag/agile/</link>
+      <atom:link href="https://lephanthuymai.github.io/tag/agile/index.xml" rel="self" type="application/rss+xml" />
+    <description>Agile</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021 by Mai Le.</copyright><lastBuildDate>Fri, 08 Jan 2021 14:36:15 +0700</lastBuildDate>
     <image>
       <url>https://lephanthuymai.github.io/images/icon_huecf101d77c4d50fee89da6355e975757_514918_512x512_fill_lanczos_center_2.png</url>
-      <title>Posts</title>
-      <link>https://lephanthuymai.github.io/post/</link>
+      <title>Agile</title>
+      <link>https://lephanthuymai.github.io/tag/agile/</link>
     </image>
     
     <item>
