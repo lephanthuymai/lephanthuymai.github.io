@@ -5,12 +5,59 @@
     <link>https://lephanthuymai.github.io/category/Data-Science/</link>
       <atom:link href="https://lephanthuymai.github.io/category/Data-Science/index.xml" rel="self" type="application/rss+xml" />
     <description>Data Science</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021 by Mai Le.</copyright><lastBuildDate>Sun, 21 Feb 2021 13:27:36 +0700</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021 by Mai Le.</copyright><lastBuildDate>Tue, 02 Mar 2021 20:55:42 +0700</lastBuildDate>
     <image>
       <url>https://lephanthuymai.github.io/images/icon_huecf101d77c4d50fee89da6355e975757_514918_512x512_fill_lanczos_center_2.png</url>
       <title>Data Science</title>
       <link>https://lephanthuymai.github.io/category/Data-Science/</link>
     </image>
+    
+    <item>
+      <title>Hypothesis Testing Simply Explained</title>
+      <link>https://lephanthuymai.github.io/post/hypothesis-testing-simply-explained/</link>
+      <pubDate>Tue, 02 Mar 2021 20:55:42 +0700</pubDate>
+      <guid>https://lephanthuymai.github.io/post/hypothesis-testing-simply-explained/</guid>
+      <description>&lt;p&gt;When I was working for a software outsourcing firm, we had performance appraisal every six months. The company tried very hard to have fair recognitions for their employees across different departments but there were always rumors how employees reporting under certain departments or even under certain managers tend to have higher chances of promotion. The HR department made some simple calculations like averaging ratings of members under each manager/each department and compare the results, but is it enough to compare an average rating of a department versus another (most of the times the gap is very small) and use that as an indicator that one department&amp;rsquo;s managers are easier on their employees than another given that their people should have similar skillset and experience? Similar problems in management when you need to validate a theory or a bias, can be addressed using &lt;strong&gt;hypothesis testing&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-hypothesis-testing-then&#34;&gt;What is hypothesis testing then?&lt;/h2&gt;
+&lt;img src=&#34;https://www.kdnuggets.com/wp-content/uploads/xkcd-p-value-jellybeans.jpg&#34; width=&#34;400&#34;/&gt;
+&lt;p&gt;Source: &lt;a href=&#34;https://xkcd.com/882/&#34;&gt;https://xkcd.com/882/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A hypothesis test is a statistical test designed to verify if there is enough evidence in the data sample to reject or not reject an assumption. This assumption is called the &lt;strong&gt;null hypothesis&lt;/strong&gt;, it is the status quo, meaning there is no difference among test groups, nothing interesting happens, any observed differences are by sampling or by errors. When examining the data and finding enough &amp;ldquo;evidence&amp;rdquo;, we can reject the null hypothesis and accept an &lt;strong&gt;alternative hypothesis&lt;/strong&gt;. In the example of performance appraisal rating above, the null hypothesis states that there is no difference in the way different departments rate their employees, whereas the alternative hypothesis states that there is indeed difference in ratings among departments.&lt;/p&gt;
+&lt;h2 id=&#34;how-can-we-find-evidence-to-reject-the-null-hypothesis&#34;&gt;How can we find &amp;ldquo;evidence&amp;rdquo; to reject the null hypothesis?&lt;/h2&gt;
+&lt;p&gt;This is where things get more complicated: we need to define and compute a &lt;strong&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Test_statistic&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;test statistic&lt;/a&gt;&lt;/strong&gt; and a &lt;strong&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/P-value&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;p-value&lt;/a&gt;&lt;/strong&gt;, then compare the p-value with a predefined threshold called $\alpha$, commonly assigned with $0.05$, to decide whether to reject or not reject the null hypothesis.&lt;/p&gt;
+&lt;img src=&#34;https://i.kym-cdn.com/entries/icons/original/000/018/489/nick-young-confused-face-300x256-nqlyaa.jpg&#34; alt=&#34;Confused&#34; width=&#34;300&#34;/&gt;
+&lt;p&gt;Source: &lt;a href=&#34;https://knowyourmeme.com/memes/confused-nick-young/photos&#34;&gt;https://knowyourmeme.com/memes/confused-nick-young/photos&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;how-does-it-actually-work&#34;&gt;How does it actually work?&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s take a closer look at our performance rating example. Our null hypothesis states that there is no difference in ratings between departments, in order to test this hypothesis, we define the test statistic as the difference in the average ratings among different departments.&lt;/p&gt;
+&lt;p&gt;To demonstrate the analysis, I have created a &lt;a href=&#34;rating_samples.csv&#34;&gt;sample dataset&lt;/a&gt; with 200 fake ratings (with random values between 3 and 5) for 2 departments A and B, in which ratings from department B are generally 0.2 higher than those of department A.&lt;/p&gt;
+&lt;img src=&#34;csv_file_capture.png&#34; width=200/&gt;
+&lt;p&gt;I am using &lt;a href=&#34;https://www.r-project.org/about.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;R&lt;/a&gt; to help with the test given its simplicity, more detailed instructions can be found below if you would like to re-produce the analysis.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s load the dataset and use R&amp;rsquo;s &lt;code&gt;lm&lt;/code&gt; function to conduct the test.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;library(tidyverse)
+library(broom)
+
+# load the dataset
+rating_df &amp;lt;- read_csv(&amp;quot;rating_samples.csv&amp;quot;)
+
+# conduct the test
+lm(rating ~ dept, rating_df) %&amp;gt;% tidy() %&amp;gt;% filter(term != &#39;(Intercept)&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;lm_result.png&#34; width=200/&gt;
+&lt;p&gt;&lt;code&gt;lm&lt;/code&gt; function will use &lt;code&gt;dept&lt;/code&gt; A&amp;rsquo;s values as the baseline, each row is the result of the test whether there is a difference between a department&amp;rsquo;s ratings and the baseline department&amp;rsquo;s: if &lt;code&gt;p.value&lt;/code&gt; is less than the significance threshold, we can reject the null hypothesis and accept the alternative hypothesis that there is difference between the two groups of data.&lt;/p&gt;
+&lt;p&gt;Given our &lt;code&gt;p.value&lt;/code&gt; for &lt;code&gt;deptB&lt;/code&gt; row is $0.000376$, which is much lower than the significance threshold $\alpha=0.05$, we have enough evidence to reject the null hypothesis and accept the alternative hypothesis that there is indeed a difference between ratings of department A and B.&lt;/p&gt;
+&lt;p&gt;Column &lt;code&gt;statistic&lt;/code&gt; is our test statistic: the mean of deptB&amp;rsquo;s ratings is at approximately 3.618, whilst column &lt;code&gt;term&lt;/code&gt; is the coefficient of department in a linear regression to predict that department&amp;rsquo;s &lt;code&gt;rating&lt;/code&gt;, simply put: when a person moves from department A to department B, their rating will likely increase by 0.281.&lt;/p&gt;
+&lt;p&gt;Sounds like magic? I know!&lt;/p&gt;
+&lt;p&gt;In case you want to re-create the analysis above, please follow the steps below:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RStudio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Set the working directory to where your analysis files to be: Session &amp;gt; Set Working Directory &amp;gt; Choose Directory &amp;hellip;&lt;/li&gt;
+&lt;li&gt;Copy or create new &lt;code&gt;rating_samples.csv&lt;/code&gt; in the working directory, which should contain department name (&lt;code&gt;dept&lt;/code&gt;) and their employee ratings (&lt;code&gt;rating&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Copy and execute the script above in the Console panel&lt;/li&gt;
+&lt;li&gt;If your &lt;code&gt;p.value&lt;/code&gt; for each department (&lt;code&gt;deptX&lt;/code&gt;) is less than 0.05, you can reject the null hypothesis and accept the alternative hypothesis: that department&amp;rsquo;s ratings are different from the baseline department&amp;rsquo;s&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The application of hypothesis testing in management is endless, for example, we can use it to justify the investment in various marketing strategies or use it to validate the effectiveness of different product designs (A/B Testing). There are actually different types of &lt;a href=&#34;https://en.wikipedia.org/wiki/Statistical_hypothesis_testing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hypothesis testing&lt;/a&gt;, each with different sets of &lt;a href=&#34;https://en.wikipedia.org/wiki/Statistical_assumption&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;assumptions&lt;/a&gt;, please do proper research before applying this test as using a wrong test will yield a misleading result.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>COVID-19 Data Portal</title>
