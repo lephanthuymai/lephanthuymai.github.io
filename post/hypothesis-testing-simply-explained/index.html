@@ -773,7 +773,7 @@ rating_df &lt;- read_csv(&quot;rating_samples.csv&quot;)
 # conduct the test
 lm(rating ~ dept, rating_df) %&gt;% tidy() %&gt;% filter(term != '(Intercept)')
 </code></pre>
-<img src="lm_result.png" width=200/>
+<img src="lm_result.png" width=500/>
 <p><code>lm</code> function will use <code>dept</code> A&rsquo;s values as the baseline, each row is the result of the test whether there is a difference between a department&rsquo;s ratings and the baseline department&rsquo;s: if <code>p.value</code> is less than the significance threshold, we can reject the null hypothesis and accept the alternative hypothesis that there is difference between the two groups of data.</p>
 <p>Given our <code>p.value</code> for <code>deptB</code> row is 0.000376, which is much lower than the significance threshold <em>alpha=0.05</em>, we have enough evidence to reject the null hypothesis and accept the alternative hypothesis that there is indeed a difference between ratings of department A and B.</p>
 <p>Column <code>statistic</code> is our test statistic: the mean of deptB&rsquo;s ratings is at approximately 3.618, whilst column <code>term</code> is the coefficient of department in a linear regression to predict that department&rsquo;s <code>rating</code>, simply put: when a person moves from department A to department B, their rating will likely increase by 0.281.</p>

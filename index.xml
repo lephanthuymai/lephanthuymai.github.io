@@ -41,7 +41,7 @@ rating_df &amp;lt;- read_csv(&amp;quot;rating_samples.csv&amp;quot;)
 # conduct the test
 lm(rating ~ dept, rating_df) %&amp;gt;% tidy() %&amp;gt;% filter(term != &#39;(Intercept)&#39;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;lm_result.png&#34; width=200/&gt;
+&lt;img src=&#34;lm_result.png&#34; width=500/&gt;
 &lt;p&gt;&lt;code&gt;lm&lt;/code&gt; function will use &lt;code&gt;dept&lt;/code&gt; A&amp;rsquo;s values as the baseline, each row is the result of the test whether there is a difference between a department&amp;rsquo;s ratings and the baseline department&amp;rsquo;s: if &lt;code&gt;p.value&lt;/code&gt; is less than the significance threshold, we can reject the null hypothesis and accept the alternative hypothesis that there is difference between the two groups of data.&lt;/p&gt;
 &lt;p&gt;Given our &lt;code&gt;p.value&lt;/code&gt; for &lt;code&gt;deptB&lt;/code&gt; row is 0.000376, which is much lower than the significance threshold &lt;em&gt;alpha=0.05&lt;/em&gt;, we have enough evidence to reject the null hypothesis and accept the alternative hypothesis that there is indeed a difference between ratings of department A and B.&lt;/p&gt;
 &lt;p&gt;Column &lt;code&gt;statistic&lt;/code&gt; is our test statistic: the mean of deptB&amp;rsquo;s ratings is at approximately 3.618, whilst column &lt;code&gt;term&lt;/code&gt; is the coefficient of department in a linear regression to predict that department&amp;rsquo;s &lt;code&gt;rating&lt;/code&gt;, simply put: when a person moves from department A to department B, their rating will likely increase by 0.281.&lt;/p&gt;
