@@ -50,7 +50,7 @@ lm(rating ~ dept, rating_df) %&amp;gt;% tidy() %&amp;gt;% filter(term != &#39;(I
 &lt;ol&gt;
 &lt;li&gt;Install &lt;a href=&#34;https://rstudio.com/products/rstudio/download/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RStudio&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Set the working directory to where your analysis files to be: Session &amp;gt; Set Working Directory &amp;gt; Choose Directory &amp;hellip;&lt;/li&gt;
-&lt;li&gt;Copy or create new &lt;code&gt;rating_samples.csv&lt;/code&gt; in the working directory, which should contain department name (&lt;code&gt;dept&lt;/code&gt;) and their employee ratings (&lt;code&gt;rating&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Copy or create new &lt;code&gt;rating_samples.csv&lt;/code&gt; in the working directory, it should contain department name (&lt;code&gt;dept&lt;/code&gt;) and their employee ratings (&lt;code&gt;rating&lt;/code&gt;)&lt;/li&gt;
 &lt;li&gt;Copy and execute the script above in the Console panel&lt;/li&gt;
 &lt;li&gt;If your &lt;code&gt;p.value&lt;/code&gt; for each department (&lt;code&gt;deptX&lt;/code&gt;) is less than 0.05, you can reject the null hypothesis and accept the alternative hypothesis: that department&amp;rsquo;s ratings are different from the baseline department&amp;rsquo;s&lt;/li&gt;
 &lt;/ol&gt;
