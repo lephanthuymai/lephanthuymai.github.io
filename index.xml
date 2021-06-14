@@ -5,12 +5,20 @@
     <link>https://lephanthuymai.github.io/</link>
       <atom:link href="https://lephanthuymai.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Mai Le</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021 by Mai Le.</copyright><lastBuildDate>Tue, 02 Mar 2021 20:55:42 +0700</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021 by Mai Le.</copyright><lastBuildDate>Sun, 13 Jun 2021 22:04:23 -0700</lastBuildDate>
     <image>
       <url>https://lephanthuymai.github.io/images/icon_huecf101d77c4d50fee89da6355e975757_514918_512x512_fill_lanczos_center_2.png</url>
       <title>Mai Le</title>
       <link>https://lephanthuymai.github.io/</link>
     </image>
+    
+    <item>
+      <title>Data Science EDA Package</title>
+      <link>https://lephanthuymai.github.io/project/datascience-eda/</link>
+      <pubDate>Sun, 13 Jun 2021 22:04:23 -0700</pubDate>
+      <guid>https://lephanthuymai.github.io/project/datascience-eda/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hypothesis Testing Simply Explained</title>
