@@ -8,13 +8,14 @@
   --cg-border-strong: #c9c9c1;
   --cg-text: #111111;
   --cg-muted: #676767;
-  --cg-soft: #e8f4ef;
-  --cg-accent: #10a37f;
-  --cg-accent-strong: #0f8f70;
-  --cg-link: #0b7f63;
-  --cg-shadow: 0 18px 46px rgba(0, 0, 0, 0.07);
+  --cg-soft: #ececea;
+  --cg-accent: #111111;
+  --cg-accent-strong: #000000;
+  --cg-link: #111111;
+  --cg-focus-ring: rgba(0, 0, 0, 0.1);
+  --cg-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
   --cg-radius: 8px;
-  --cg-nav-height: 66px;
+  --cg-nav-height: 58px;
 }
 
 body.dark {
@@ -26,10 +27,11 @@ body.dark {
   --cg-border-strong: #5a5a5a;
   --cg-text: #f4f4f2;
   --cg-muted: #c2c2bd;
-  --cg-soft: #123c32;
-  --cg-accent: #19c37d;
-  --cg-accent-strong: #27d993;
-  --cg-link: #5ee0b7;
+  --cg-soft: #353535;
+  --cg-accent: #f4f4f2;
+  --cg-accent-strong: #ffffff;
+  --cg-link: #f4f4f2;
+  --cg-focus-ring: rgba(255, 255, 255, 0.16);
   --cg-shadow: 0 18px 46px rgba(0, 0, 0, 0.24);
 }
 
@@ -42,6 +44,8 @@ body {
     linear-gradient(180deg, var(--cg-bg-alt) 0, var(--cg-bg) 320px, var(--cg-bg) 100%);
   color: var(--cg-text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
   letter-spacing: 0;
 }
 
@@ -78,7 +82,7 @@ a:hover,
 .container-md,
 .container-sm,
 .container-xl {
-  max-width: 1120px;
+  max-width: 1040px;
 }
 
 #navbar-main {
@@ -99,7 +103,7 @@ body.dark #navbar-main {
 
 .navbar-brand {
   color: var(--cg-text) !important;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 650;
 }
 
@@ -107,7 +111,7 @@ body.dark #navbar-main {
 #navbar-main .nav-icons .nav-link {
   color: var(--cg-muted) !important;
   border-radius: var(--cg-radius);
-  font-size: 0.94rem;
+  font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0;
   transition: background-color 150ms ease, color 150ms ease;
@@ -150,15 +154,15 @@ body.dark .home-section:nth-of-type(even) {
 }
 
 .home-section {
-  padding: 76px 0;
+  padding: 54px 0;
 }
 
 .home-section:first-of-type {
-  padding-top: 42px;
+  padding-top: 28px;
 }
 
 .home-section > .container > .row {
-  row-gap: 22px;
+  row-gap: 16px;
 }
 
 .section-heading {
@@ -170,16 +174,16 @@ body.dark .home-section:nth-of-type(even) {
 .article-container h1,
 .universal-wrapper h1 {
   color: var(--cg-text);
-  font-size: 1.85rem;
+  font-size: 1.28rem;
   font-weight: 650;
-  line-height: 1.18;
+  line-height: 1.25;
   letter-spacing: 0;
 }
 
 .section-heading h1::after,
 #about h1::after {
   content: "";
-  display: block;
+  display: none;
   width: 44px;
   height: 3px;
   margin-top: 14px;
@@ -201,7 +205,7 @@ body.dark .article-metadata a {
 
 #about .container > .row {
   align-items: stretch;
-  padding: 28px;
+  padding: 20px;
   background: var(--cg-surface);
   border: 1px solid var(--cg-border);
   border-radius: var(--cg-radius);
@@ -210,13 +214,15 @@ body.dark .article-metadata a {
 
 #profile {
   height: 100%;
-  padding: 28px 20px;
+  padding: 22px 16px;
   background: var(--cg-surface-muted);
   border: 1px solid var(--cg-border);
   border-radius: var(--cg-radius);
 }
 
 .avatar {
+  width: 220px;
+  height: 220px;
   background: var(--cg-surface);
   border: 1px solid var(--cg-border);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
@@ -225,8 +231,12 @@ body.dark .article-metadata a {
 
 .portrait-title h2 {
   color: var(--cg-text);
-  font-size: 1.6rem;
+  font-size: 1.25rem;
   font-weight: 650;
+}
+
+.portrait-title h3 {
+  font-size: 0.9rem;
 }
 
 #profile .network-icon {
@@ -245,8 +255,8 @@ body.dark .article-metadata a {
 
 .network-icon a {
   display: grid;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   place-items: center;
   color: var(--cg-text);
   background: var(--cg-surface);
@@ -263,15 +273,14 @@ body.dark .article-metadata a {
 }
 
 .big-icon {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 #about .article-style {
   margin-top: 10px;
-  padding: 20px 22px;
+  padding: 14px 16px;
   background: var(--cg-surface-muted);
   border: 1px solid var(--cg-border);
-  border-left: 4px solid var(--cg-accent);
   border-radius: var(--cg-radius);
 }
 
@@ -284,8 +293,8 @@ body.dark .article-metadata a {
 body.dark .experience .card-text,
 body.dark .experience .card-text p {
   color: var(--cg-text) !important;
-  font-size: 0.98rem !important;
-  line-height: 1.68;
+  font-size: 0.92rem !important;
+  line-height: 1.58;
 }
 
 ul.ul-interests,
@@ -301,12 +310,12 @@ ul.ul-edu li {
 ul.ul-interests li {
   display: inline-flex;
   margin-right: 6px;
-  padding: 7px 10px;
+  padding: 6px 9px;
   color: var(--cg-text);
   background: var(--cg-surface-muted);
   border: 1px solid var(--cg-border);
   border-radius: var(--cg-radius);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 ul.ul-edu li .description p.course {
@@ -324,7 +333,7 @@ body.dark ul.ul-edu li .description p.institution {
 }
 
 .featurette .col-12.col-sm-4 {
-  padding: 24px 18px;
+  padding: 18px 14px;
   background: var(--cg-surface);
   border: 1px solid var(--cg-border);
   border-radius: var(--cg-radius);
@@ -332,19 +341,19 @@ body.dark ul.ul-edu li .description p.institution {
 
 .featurette-icon {
   display: grid;
-  width: 46px;
-  height: 46px;
+  width: 38px;
+  height: 38px;
   place-items: center;
-  margin: 0 auto 14px;
+  margin: 0 auto 10px;
   color: var(--cg-accent);
   background: var(--cg-soft);
   border-radius: var(--cg-radius);
-  font-size: 1.45rem;
+  font-size: 1.18rem;
 }
 
 .featurette h3 {
   color: var(--cg-text);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 650;
 }
 
@@ -368,11 +377,11 @@ body.dark ul.ul-edu li .description p.institution {
 .media.stream-item:hover {
   border-color: var(--cg-border-strong);
   box-shadow: var(--cg-shadow);
-  transform: translateY(-2px);
+  transform: none;
 }
 
 .media.stream-item {
-  padding: 20px;
+  padding: 16px;
 }
 
 .media.stream-item img,
@@ -383,7 +392,7 @@ body.dark ul.ul-edu li .description p.institution {
 }
 
 .card-body {
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .card .card-text {
@@ -401,17 +410,17 @@ body.dark ul.ul-edu li .description p.institution {
 }
 
 .article-title {
-  font-size: 1.2rem;
+  font-size: 0.98rem;
   line-height: 1.35;
 }
 
 .stream-meta.article-metadata {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .experience .m-2 .border,
 .experience .col.border-right {
-  border-color: var(--cg-accent) !important;
+  border-color: var(--cg-border-strong) !important;
 }
 
 .experience .m-2 .border.exp-fill,
@@ -437,6 +446,7 @@ body.dark ul.ul-edu li .description p.institution {
 .btn-primary,
 .btn-outline-primary {
   border-radius: var(--cg-radius);
+  font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0;
   box-shadow: none !important;
@@ -478,6 +488,7 @@ body.dark #search-query {
   background: var(--cg-surface);
   border: 1px solid var(--cg-border);
   border-radius: var(--cg-radius);
+  font-size: 0.92rem;
   box-shadow: none;
 }
 
@@ -486,7 +497,7 @@ body.dark #search-query {
 body.dark .form-control:focus {
   background: var(--cg-surface);
   border-color: var(--cg-accent);
-  box-shadow: 0 0 0 3px rgba(16, 163, 127, 0.18);
+  box-shadow: 0 0 0 3px var(--cg-focus-ring);
 }
 
 .wg-contact .fa-li,
@@ -503,7 +514,8 @@ body.dark .form-control:focus {
 
 .site-footer {
   border-top: 1px solid var(--cg-border);
-  padding: 28px 0;
+  padding: 22px 0;
+  font-size: 0.86rem;
 }
 
 .search-results,
@@ -514,7 +526,7 @@ body.dark .search-header {
 }
 
 .search-hit {
-  padding: 16px 18px;
+  padding: 14px 16px;
   margin-bottom: 12px;
 }
 
@@ -524,7 +536,7 @@ body.dark .search-header {
 }
 
 .article-container {
-  padding: 42px 22px;
+  padding: 32px 22px;
 }
 
 .article-header,
@@ -562,22 +574,27 @@ body.dark code {
   }
 
   #about .container > .row {
-    padding: 18px;
+    padding: 16px;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
   }
 }
 
 @media (max-width: 768px) {
   .home-section {
-    padding: 48px 0;
+    padding: 40px 0;
   }
 
   .home-section:first-of-type {
-    padding-top: 28px;
+    padding-top: 22px;
   }
 
   .section-heading h1,
   #about h1 {
-    font-size: 1.55rem;
+    font-size: 1.18rem;
   }
 
   .media.stream-item {
