@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/css/wowchemy.9763f5be8493c9d07b95458db93fbb03.css">
   <style>
     .process-animation{background:#f7f7f7;border-left:4px solid #11b981;border-radius:4px;margin:2rem 0;padding:1.25rem;overflow-x:auto}
-    .process-animation pre{margin:0;min-width:760px;font-size:.85rem;line-height:1.6}
+    .process-animation pre{margin:0;font-size:clamp(.68rem,1.8vw,.85rem);line-height:1.6;text-align:center;white-space:pre}
     .process-animation .active{color:#087f5b;font-weight:700}
     .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
     .tool-card{border:1px solid #e7e7e7;border-radius:6px;padding:1rem}
@@ -123,9 +123,11 @@
       const stages = ['IDEATE','VALIDATE','PLAN','BUILD','DEPLOY','LEARN'];
       const outcomes = ['Clear product intent','Validated experience','Executable delivery plan','Reviewed and tested feature','Documented production release','Adoption insight'];
       let current = 0;
+      const box = (index) => current === index ? `[* ${stages[index]} *]` : `[ ${stages[index]} ]`;
       const draw = () => {
-        const line = stages.map((stage,index) => index === current ? `[* ${stage} *]` : `[  ${stage}  ]`).join(' -> ');
-        output.textContent = `                         TRUETEST PRODUCT LOOP\n\n${line}\n   ^${' '.repeat(Math.max(1,line.length-5))}|\n   +-------------------- customer learning --------------------+\n\nACTIVE  : ${stages[current]}\nOUTCOME : ${outcomes[current]}`;
+        const top = `${box(0)} -> ${box(1)} -> ${box(2)}`;
+        const bottom = `${box(5)} <- ${box(4)} <- ${box(3)}`;
+        output.textContent = `TRUETEST PRODUCT LOOP\n\n${top}\n       ^                       |\n       |                       v\n${bottom}\n\nACTIVE  : ${stages[current]}\nOUTCOME : ${outcomes[current]}`;
       };
       draw();
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => { current = (current + 1) % stages.length; draw(); }, 1100);
