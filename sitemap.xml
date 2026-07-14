@@ -2,6 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://lephanthuymai.github.io/post/how-we-prioritize-incremental-features/</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://lephanthuymai.github.io/tags/prioritization/</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
     <loc>https://lephanthuymai.github.io/post/how-we-build-truetest/</loc>
     <lastmod>2026-07-14</lastmod>
   </url>

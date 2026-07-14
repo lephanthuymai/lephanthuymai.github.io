@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Mai Le">
+  <meta name="description" content="A transparent, collaborative framework for prioritizing small and incremental TrueTest product improvements.">
+  <title>How We Prioritize Incremental Product Improvements | Mai Le</title>
+  <link rel="canonical" href="https://lephanthuymai.github.io/post/how-we-prioritize-incremental-features/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&amp;display=swap">
+  <link rel="stylesheet" href="/css/wowchemy.9763f5be8493c9d07b95458db93fbb03.css">
+  <style>
+    .scope-note,.north-star{border-left:4px solid #11b981;border-radius:4px;margin:1.75rem 0;padding:1.25rem}
+    .scope-note{background:#fff7ed;border-color:#f97316}.north-star{background:#f0fdf9}
+    .scope-note h2,.north-star h2{font-size:1.15rem;margin:0 0 .5rem}.scope-note p,.north-star p{margin:0}
+    .decision-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin:2rem 0;text-align:center}
+    .decision-step{border:1px solid #dfe4e8;border-radius:6px;padding:1rem .6rem;position:relative}
+    .decision-step strong{display:block;color:#087f5b;margin-bottom:.35rem}
+    .score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+    .score-card{border:1px solid #e1e5e8;border-radius:6px;padding:1rem}.score-card h3{font-size:1rem;margin:0 0 .5rem}.score-card ul{margin-bottom:0;padding-left:1.2rem}
+    .formula{background:#f7f7f7;border-radius:6px;font-family:Roboto Mono,monospace;margin:1.5rem 0;padding:1.25rem;text-align:center}
+    .priority-table{width:100%;margin:1.5rem 0}.priority-table th,.priority-table td{border-bottom:1px solid #e5e7eb;padding:.75rem;text-align:left}.priority-table th{color:#087f5b}
+    @media(max-width:700px){.decision-flow{grid-template-columns:1fr 1fr}}
+    @media(max-width:420px){.decision-flow{grid-template-columns:1fr}}
+    @media(prefers-color-scheme:dark){.scope-note{background:#3b2618}.north-star{background:#17352d}.decision-step,.score-card{border-color:#444}.formula{background:#252525}.priority-table th,.priority-table td{border-color:#444}}
+  </style>
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container">
+      <a class="navbar-brand" href="/">Mai Le</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span></button>
+      <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content"><ul class="navbar-nav d-md-inline-flex"><li class="nav-item"><a class="nav-link" href="/#about">About</a></li><li class="nav-item"><a class="nav-link" href="/#posts">Posts</a></li><li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li></ul></div>
+    </div>
+  </nav>
+
+  <div class="page-body">
+    <article class="article">
+      <div class="article-container pt-3">
+        <h1>How We Prioritize Incremental Product Improvements</h1>
+        <p class="page-subtitle">A collaborative, metric-led framework for making small product decisions consistently</p>
+        <div class="article-metadata"><div><span>Mai Le</span></div><span class="article-date">Jul 14, 2026</span><span class="middot-divider"></span><span class="article-reading-time">6 min read</span></div>
+      </div>
+
+      <div class="article-container">
+        <div class="article-style">
+          <p>Product teams rarely struggle because they have too few ideas. The harder problem is deciding which customer request, reliability improvement, defect, or usability enhancement should come first—and explaining that decision consistently.</p>
+          <p>For TrueTest, we use a lightweight prioritization framework that connects day-to-day product decisions to a shared customer outcome. It gives Product and Engineering a common language while preserving room for judgment.</p>
+
+          <aside class="scope-note">
+            <h2>Where this framework applies</h2>
+            <p>This model is designed for <strong>small or incremental features, defects, and product improvements</strong>. We use a different framework for new product initiatives, where strategic fit, market opportunity, discovery risk, business-model assumptions, and investment size require a broader evaluation.</p>
+          </aside>
+
+          <div class="north-star">
+            <h2>Start with the North Star</h2>
+            <p><em>Number of TrueTest-generated test cases that customers successfully adopt and execute.</em></p>
+          </div>
+
+          <p>The North Star gives the team a practical filter: does this work help customers generate, adopt, and successfully execute useful tests? The metric may evolve as the product and its market fit develop, but it provides a clear decision anchor today.</p>
+
+          <h2>The framework at a glance</h2>
+          <div class="decision-flow" aria-label="Four-step prioritization process">
+            <div class="decision-step"><strong>1. Filter</strong><span>Remove work that does not support the North Star</span></div>
+            <div class="decision-step"><strong>2. Categorize</strong><span>Assess the severity of its metric impact</span></div>
+            <div class="decision-step"><strong>3. Score</strong><span>Evaluate impact, effort, and confidence</span></div>
+            <div class="decision-step"><strong>4. Prioritize</strong><span>Place the work into an action bucket</span></div>
+          </div>
+
+          <h2>Prioritization is a conversation, not a calculation</h2>
+          <p>Product and Engineering evaluate each item together. The Product Manager brings customer impact, urgency, proof-of-concept timing, revenue signals, and expected effect on the North Star. Engineering brings effort, technical constraints, dependencies, feasibility, and confidence.</p>
+          <p>Disagreement is useful when it exposes assumptions. The goal is not a perfect score; it is a predictable and transparent decision that both disciplines understand. When the two perspectives cannot converge, the item is discussed with the broader team and finalized together.</p>
+
+          <h2>Step 1: filter before scoring</h2>
+          <p>Scoring every request creates noise and gives weak ideas a false sense of legitimacy. We first ask whether the item can create a positive impact on the current North Star.</p>
+          <p>Items without a meaningful connection—such as purely cosmetic changes or requests that do not currently help customers adopt and execute generated tests—are set aside. This is not a claim that they have no value. It means they are not the best use of the team’s capacity under the current product objective.</p>
+
+          <h2>Step 2: categorize the surviving work</h2>
+          <h3>High severity</h3>
+          <p>The issue blocks or significantly harms a customer’s ability to generate or use test cases during onboarding, active usage, or a proof of concept. Examples include generation failures, missing major journeys, or object-recognition problems affecting a substantial portion of generated tests.</p>
+          <p><strong>Interpretation:</strong> if unresolved, the customer cannot achieve the North Star outcome.</p>
+
+          <h3>Medium severity</h3>
+          <p>The work improves the reliability, accuracy, stability, or speed of reaching the outcome. Examples include better flow selection, faster map generation, or a workflow redesign that removes recurring friction.</p>
+          <p><strong>Interpretation:</strong> the customer can achieve the outcome, but the improvement makes it faster, more consistent, or more dependable.</p>
+
+          <h3>Low severity</h3>
+          <p>The item adds usability, future extensibility, or supporting insight but does not directly increase the North Star metric today.</p>
+          <p><strong>Interpretation:</strong> it may be a worthwhile investment, but it is not currently required to unblock customers or deliver the core outcome.</p>
+
+          <h2>Step 3: score four decision factors</h2>
+          <div class="score-grid">
+            <div class="score-card"><h3>Customer and commercial impact</h3><ul><li><strong>3:</strong> strategic customer, major contract value, renewal or expansion risk, or POC at risk</li><li><strong>2:</strong> several mid-sized customers or one meaningful customer</li><li><strong>1:</strong> one small customer</li><li><strong>0:</strong> internal only</li></ul></div>
+            <div class="score-card"><h3>North Star impact</h3><ul><li><strong>3:</strong> high severity</li><li><strong>2:</strong> medium severity</li><li><strong>1:</strong> low severity</li><li><strong>0:</strong> misaligned and normally filtered out</li></ul></div>
+            <div class="score-card"><h3>Effort, scored inversely</h3><ul><li><strong>3:</strong> one day or less</li><li><strong>2:</strong> two to five days</li><li><strong>1:</strong> one to two weeks</li><li><strong>0:</strong> more than two weeks; split it</li></ul></div>
+            <div class="score-card"><h3>Confidence</h3><ul><li><strong>3:</strong> clear problem, proven reproduction, validated feasibility</li><li><strong>2:</strong> some unknowns remain</li><li><strong>1:</strong> unclear or inconsistent evidence</li><li><strong>0:</strong> highly speculative</li></ul></div>
+          </div>
+
+          <div class="formula"><strong>Priority Score = Customer Impact + North Star Impact + Effort + Confidence</strong></div>
+          <p>The inverse effort score intentionally surfaces quick wins. A very large item receives a zero not because it lacks value, but because it needs to be broken down before it can compete fairly with incremental work.</p>
+
+          <h2>Step 4: turn the score into an action</h2>
+          <table class="priority-table">
+            <thead><tr><th>Score</th><th>Priority</th><th>Expected action</th></tr></thead>
+            <tbody>
+              <tr><td><strong>10–12</strong></td><td>Immediate</td><td>Address now; may interrupt the current sprint</td></tr>
+              <tr><td><strong>7–9</strong></td><td>High</td><td>Plan for the next sprint or current delivery cycle</td></tr>
+              <tr><td><strong>4–6</strong></td><td>Medium</td><td>Batch for a future cycle</td></tr>
+              <tr><td><strong>0–3</strong></td><td>Low</td><td>Park and revisit when context changes</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Why scoring is guidance—not governance</h2>
+          <p>A score can make assumptions visible, but it cannot understand every dependency or strategic nuance. A high-confidence quick win should not automatically displace an urgent customer blocker. Nor should a large customer request automatically override product integrity or long-term technical health.</p>
+          <p>The framework works because it structures the conversation. It reduces recency bias, loudest-voice bias, and unproductive debate while making exceptions explicit. Judgment remains with the team.</p>
+
+          <h2>The outcome we want</h2>
+          <p>Good prioritization does not mean everyone’s request is accepted. It means stakeholders can understand why the team is doing one thing before another, and Product and Engineering can commit to the same decision.</p>
+          <p>For incremental TrueTest work, the combination of a North Star filter, shared categorization, lightweight scoring, and clear action buckets gives us that transparency without slowing the team down.</p>
+        </div>
+
+        <div class="article-tags">
+          <a class="badge badge-light" href="/tags/product-management/">Product Management</a>
+          <a class="badge badge-light" href="/tags/prioritization/">Prioritization</a>
+        </div>
+      </div>
+    </article>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
