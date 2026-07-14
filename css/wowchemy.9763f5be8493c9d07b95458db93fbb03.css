@@ -11,5 +11,5 @@
 #navbar-main .navbar-brand,#navbar-main .navbar-nav .nav-link,#navbar-main .nav-icons .nav-link,#navbar-main .nav-icons i{color:#212529!important}#navbar-main .navbar-brand:hover,#navbar-main .navbar-nav .nav-link:hover,#navbar-main .nav-icons .nav-link:hover,#navbar-main .nav-icons .nav-link:hover i{color:var(--mai-terminal-green)!important}#navbar-main .navbar-nav .active>.nav-link,#navbar-main .navbar-nav .nav-link.active,#navbar-main .navbar-nav .nav-link.show,#navbar-main .navbar-nav .show>.nav-link{color:var(--mai-terminal-green)!important}
 
 /* Portfolio-wide typography baseline. */
-body{font-size:14px!important}.article-style,.article-style p,.article-style li,.article-style td,.article-style th,.card-text{font-size:14px!important;line-height:1.7}
-.wg-about .article-style,.wg-about .article-style p,.experience .card-text,.experience .card-text p,.experience .card-text li{font-size:14px!important;line-height:1.7}
+body{font-size:16px!important}.article-style,.article-style p,.article-style li,.article-style td,.article-style th,.card-text{font-size:16px!important;line-height:1.7}
+.wg-about .article-style,.wg-about .article-style p,.experience .card-text,.experience .card-text p,.experience .card-text li{font-size:16px!important;line-height:1.7}
