@@ -13,10 +13,11 @@
   <style>
     .article-style{line-height:1.7}
     .article-style h2{font-size:24px}.article-style h3{font-size:20px}
-    .product-context,.scope-note,.north-star{border-left:4px solid #11b981;border-radius:4px;margin:1.75rem 0;padding:1.25rem}
+    .product-context,.north-star{border-left:4px solid #11b981;border-radius:4px;margin:1.75rem 0;padding:1.25rem}
     .product-context{background:#f5f7f8;margin-top:.5rem}
-    .scope-note{background:#fff7ed;border-color:#f97316}.north-star{background:#f0fdf9}
-    .product-context h2,.scope-note h2,.north-star h2{font-size:20px;margin:0 0 .5rem}.product-context p,.scope-note p,.north-star p{margin:0}
+    .product-context .scope-heading{border-top:1px solid #d9e1e5;margin-top:1.25rem;padding-top:1.25rem}
+    .north-star{background:#f0fdf9}
+    .product-context h2,.north-star h2{font-size:20px;margin:0 0 .5rem}.product-context p,.north-star p{margin:0}
     .decision-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin:2rem 0;text-align:center}
     .decision-step{border:1px solid #dfe4e8;border-radius:6px;padding:1rem .6rem;position:relative}
     .decision-step strong{display:block;color:#087f5b;margin-bottom:.35rem}
@@ -32,7 +33,7 @@
     .priority-table{width:100%;margin:1.5rem 0}.priority-table th,.priority-table td{border-bottom:1px solid #e5e7eb;padding:.75rem;text-align:left}.priority-table th{color:#087f5b}
     @media(max-width:700px){.decision-flow{grid-template-columns:1fr 1fr}}
     @media(max-width:420px){.article-style h2{font-size:22px}.decision-flow{grid-template-columns:1fr}}
-    @media(prefers-color-scheme:dark){.product-context{background:#252525}.scope-note{background:#3b2618}.north-star{background:#17352d}.decision-step,.score-card{border-color:#444}.formula,.workflow-animation{background:#252525}.workflow-animation .workflow-title{color:#34d399}.workflow-animation .workflow-flow{color:#cbd5e1}.workflow-animation .workflow-active,.workflow-animation .workflow-detail{color:#fb923c}.priority-table th,.priority-table td{border-color:#444}}
+    @media(prefers-color-scheme:dark){.product-context{background:#252525}.product-context .scope-heading{border-color:#444}.north-star{background:#17352d}.decision-step,.score-card{border-color:#444}.formula,.workflow-animation{background:#252525}.workflow-animation .workflow-title{color:#34d399}.workflow-animation .workflow-flow{color:#cbd5e1}.workflow-animation .workflow-active,.workflow-animation .workflow-detail{color:#fb923c}.priority-table th,.priority-table td{border-color:#444}}
   </style>
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents">
@@ -57,15 +58,12 @@
           <aside class="product-context">
             <h2>About TrueTest</h2>
             <p><a href="https://katalon.com/truetest" target="_blank" rel="noopener">TrueTest, now part of Katalon True Production Insights</a>, uses real user journeys to reveal gaps in regression coverage and generate missing tests. This framework helps our team decide which incremental improvements will most directly help customers adopt and use TrueTest successfully.</p>
+            <h2 class="scope-heading">Where this framework applies</h2>
+            <p>This model is designed for <strong>small or incremental features, defects, and product improvements</strong>. We use a different framework for new product initiatives, where strategic fit, market opportunity, discovery risk, business-model assumptions, and investment size require a broader evaluation.</p>
           </aside>
 
           <p>Product teams rarely struggle because they have too few ideas. The harder problem is deciding which customer request, reliability improvement, defect, or usability enhancement should come first—and explaining that decision consistently.</p>
           <p>For TrueTest, we use a lightweight prioritization framework that connects day-to-day product decisions to a shared customer outcome. It gives Product and Engineering a common language while preserving room for judgment.</p>
-
-          <aside class="scope-note">
-            <h2>Where this framework applies</h2>
-            <p>This model is designed for <strong>small or incremental features, defects, and product improvements</strong>. We use a different framework for new product initiatives, where strategic fit, market opportunity, discovery risk, business-model assumptions, and investment size require a broader evaluation.</p>
-          </aside>
 
           <div class="north-star">
             <h2>Start with the North Star</h2>
