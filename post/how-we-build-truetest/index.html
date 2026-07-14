@@ -13,11 +13,14 @@
   <style>
     .process-animation{background:#f7f7f7;border-left:4px solid #11b981;border-radius:4px;margin:2rem 0;padding:1.25rem;overflow-x:auto}
     .process-animation pre{margin:0;font-size:clamp(.68rem,1.8vw,.85rem);line-height:1.6;text-align:center;white-space:pre}
-    .process-animation .active{color:#087f5b;font-weight:700}
+    .process-animation .loop-title{color:#087f5b;font-weight:700}
+    .process-animation .loop-flow{color:#59636e}
+    .process-animation .loop-active{color:#c2410c;font-weight:700}
+    .process-animation .loop-detail{color:#7c3aed;font-weight:700}
     .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
     .tool-card{border:1px solid #e7e7e7;border-radius:6px;padding:1rem}
     .tool-card h3{font-size:1rem;margin:0 0 .4rem}
-    @media(prefers-color-scheme:dark){.process-animation{background:#252525}.tool-card{border-color:#444}}
+    @media(prefers-color-scheme:dark){.process-animation{background:#252525}.process-animation .loop-title{color:#34d399}.process-animation .loop-flow{color:#cbd5e1}.process-animation .loop-active{color:#fb923c}.process-animation .loop-detail{color:#c4b5fd}.tool-card{border-color:#444}}
   </style>
 </head>
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents">
@@ -123,11 +126,11 @@
       const stages = ['IDEATE','VALIDATE','PLAN','BUILD','DEPLOY','LEARN'];
       const outcomes = ['Clear product intent','Validated experience','Executable delivery plan','Reviewed and tested feature','Documented production release','Adoption insight'];
       let current = 0;
-      const box = (index) => current === index ? `[* ${stages[index]} *]` : `[ ${stages[index]} ]`;
+      const box = (index) => current === index ? `[* <span class="loop-active">${stages[index]}</span> *]` : `[ ${stages[index]} ]`;
       const draw = () => {
         const top = `${box(0)} -> ${box(1)} -> ${box(2)}`;
         const bottom = `${box(5)} <- ${box(4)} <- ${box(3)}`;
-        output.textContent = `TRUETEST PRODUCT LOOP\n\n${top}\n       ^                       |\n       |                       v\n${bottom}\n\nACTIVE  : ${stages[current]}\nOUTCOME : ${outcomes[current]}`;
+        output.innerHTML = `<span class="loop-title">TRUETEST PRODUCT LOOP</span>\n\n<span class="loop-flow">${top}\n       ^                       |\n       |                       v\n${bottom}</span>\n\n<span class="loop-detail">ACTIVE  : ${stages[current]}\nOUTCOME : ${outcomes[current]}</span>`;
       };
       draw();
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => { current = (current + 1) % stages.length; draw(); }, 2500);
