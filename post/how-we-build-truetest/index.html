@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Mai Le">
+  <meta name="description" content="An AI-augmented product development loop connecting intent, design, delivery, quality, release, and customer learning.">
+  <title>How We Build TrueTest: An AI-Augmented Product Development Loop | Mai Le</title>
+  <link rel="canonical" href="https://lephanthuymai.github.io/post/how-we-build-truetest/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  <link rel="stylesheet" href="/css/wowchemy.9763f5be8493c9d07b95458db93fbb03.css">
+  <style>
+    .process-animation{background:#f7f7f7;border-left:4px solid #11b981;border-radius:4px;margin:2rem 0;padding:1.25rem;overflow-x:auto}
+    .process-animation pre{margin:0;min-width:760px;font-size:.85rem;line-height:1.6}
+    .process-animation .active{color:#087f5b;font-weight:700}
+    .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+    .tool-card{border:1px solid #e7e7e7;border-radius:6px;padding:1rem}
+    .tool-card h3{font-size:1rem;margin:0 0 .4rem}
+    @media(prefers-color-scheme:dark){.process-animation{background:#252525}.tool-card{border-color:#444}}
+  </style>
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container">
+      <a class="navbar-brand" href="/">Mai Le</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fas fa-bars"></i></span></button>
+      <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+        <ul class="navbar-nav d-md-inline-flex"><li class="nav-item"><a class="nav-link" href="/#about">About</a></li><li class="nav-item"><a class="nav-link" href="/#posts">Posts</a></li><li class="nav-item"><a class="nav-link" href="/#contact">Contact</a></li></ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-body">
+    <article class="article">
+      <div class="article-container pt-3">
+        <h1>How We Build TrueTest: An AI-Augmented Product Development Loop</h1>
+        <p class="page-subtitle">Connecting product intent, design, engineering, quality, release, and customer learning</p>
+        <div class="article-metadata"><div><span>Mai Le</span></div><span class="article-date">Jul 14, 2026</span><span class="middot-divider"></span><span class="article-reading-time">7 min read</span></div>
+      </div>
+
+      <div class="article-container">
+        <div class="article-style">
+          <p>Building a product well requires more than a good idea. It requires a shared operating model that connects customer needs, product decisions, design, engineering, quality, documentation, release, and learning.</p>
+          <p>For TrueTest, we use an AI-augmented product development loop:</p>
+
+          <div class="process-animation" aria-label="Animated TrueTest product development loop">
+            <pre id="truetest-loop">Loading the TrueTest product loop…</pre>
+          </div>
+
+          <p>The goal is not to automate judgment or replace collaboration. It is to reduce repetitive work, strengthen traceability, and give the team more time to focus on customers and outcomes.</p>
+
+          <h2>One continuous product lifecycle</h2>
+          <p>Every feature begins as a product intent and continues through design, validation, implementation, testing, documentation, release, and adoption measurement. Product Managers, Technical Leads, developers, QA, designers, and technical writers contribute at defined points, while AI agents help create and maintain the artifacts needed along the way.</p>
+
+          <h2>The toolchain behind the loop</h2>
+          <p>Our process deliberately connects product, engineering, cross-department coordination, software quality, and design instead of forcing one system to serve every purpose.</p>
+          <div class="tool-grid">
+            <div class="tool-card"><h3>Application lifecycle management</h3><p><strong>GitHub Projects</strong> manages Product and Engineering work. The <strong>Jira KSR project</strong> manages requests and dependencies that cross departmental boundaries.</p></div>
+            <div class="tool-card"><h3>Artifact repository</h3><p><strong>GitHub</strong> is the system of record for product intents, code, documentation, reviews, release milestones, and other versioned artifacts.</p></div>
+            <div class="tool-card"><h3>Software quality management</h3><p><strong>Katalon TestOps</strong> provides the quality management system. <strong>TestTower</strong> acts as the AI coding agents’ risk-based testing harness.</p></div>
+            <div class="tool-card"><h3>AI coding agents</h3><p><strong>Claude Code</strong> and <strong>Codex</strong> support implementation, analysis, reviews, documentation, and workflow automation.</p></div>
+            <div class="tool-card"><h3>Product design</h3><p><strong>Figma</strong> is used for interface design, prototypes, design-system alignment, and usability validation.</p></div>
+          </div>
+
+          <h2>1. Ideate: register the product intent</h2>
+          <p>The process starts by turning an opportunity, problem, or proposed improvement into a clear product intent or product task in GitHub. The Product Manager captures the context, target users, problem, desired outcome, and initial requirements. AI-assisted Product Management skills help create a consistent first draft.</p>
+          <p>The objective is not to prescribe a complete solution. It is to make the intent understandable, discussable, and traceable before the team invests in design or implementation.</p>
+
+          <h2>2. Validate: design and test the experience</h2>
+          <p>The Product Manager develops the proposed experience in Figma, with input from the lead designer when needed. The concept may become a Figma prototype or an application prototype and is validated through usability testing or other appropriate feedback methods.</p>
+          <p>Validation asks whether the solution addresses the intended problem, whether users can understand it, which assumptions must change, and whether the opportunity is valuable enough to pursue.</p>
+
+          <h2>3. Plan: turn validated intent into executable work</h2>
+          <p>During weekly backlog grooming, the Product Manager walks the team through the product intent, answers questions, and updates the requirements. The Product Manager and Technical Lead then prepare the work for delivery.</p>
+          <p>GitHub Projects provides the shared Product and Engineering plan. The Technical Lead uses GitHub milestones to balance scope, dependencies, effort, availability, and priorities. Requests involving other departments are coordinated through the Jira KSR project.</p>
+
+          <h2>4. Build: implement, review, and test</h2>
+          <p>Developers implement the planned experience with support from Claude Code and Codex. Pull requests are reviewed by the Technical Lead, combining human technical judgment with AI-assisted analysis.</p>
+          <p>Testing is integrated into delivery. TestTower analyzes the product intent and code changes, generates risk-based test cases, identifies affected regression coverage, and helps execute the relevant checks. Results are reported to Katalon TestOps, where the team manages testing status and quality evidence.</p>
+          <p>After review and testing are complete, the work is approved and ready for production deployment.</p>
+
+          <h2>5. Deploy: document and release together</h2>
+          <p>Documentation is developed alongside the feature. The Product Manager creates the initial user-guide draft in GitHub. QA adds accurate screenshots or videos, and a technical writer prepares the content for publication around the relevant release milestone.</p>
+          <p>The Technical Lead deploys approved work through the production release workflow. Internal release notes, team communication, and the TrueTest product knowledge base are updated as part of the same flow. Content for feature-flagged functionality is published only when the capability is officially available to end users.</p>
+
+          <h2>6. Learn: measure adoption and close the loop</h2>
+          <p>Deployment is not the end. The Product Manager monitors feature usage, onboarding behavior, and customer adoption through product analytics and reporting dashboards. The team studies discovery, successful use, friction, intended outcomes, and follow-up opportunities.</p>
+          <p>Those insights feed the next cycle of ideation and validation. This is what turns a delivery pipeline into a product learning loop.</p>
+
+          <h2>Clear ownership, shared responsibility</h2>
+          <ul>
+            <li><strong>Product Managers</strong> guide product intent, design, validation, requirements, documentation drafts, and adoption analysis.</li>
+            <li><strong>Technical Leads</strong> guide delivery planning, technical review, and production releases.</li>
+            <li><strong>Developers</strong> implement the product experience.</li>
+            <li><strong>QA</strong> owns risk-based validation and enriches customer-facing documentation with accurate media.</li>
+            <li><strong>Designers</strong> provide focused feedback and design expertise.</li>
+            <li><strong>Technical writers</strong> prepare documentation for publication and align it with releases.</li>
+          </ul>
+
+          <h2>Automation keeps the team aligned</h2>
+          <p>Daily automated updates summarize KSR status, release progress, and bottlenecks. Weekly updates add broader signals such as product usage, customer insights, and competitor developments. This reduces reporting effort and makes risks visible earlier.</p>
+
+          <h2>What this process covers</h2>
+          <p>This workflow governs how approved product work moves from intent through release and learning. Issue prioritization and roadmap planning are handled separately. Prioritization determines which opportunities deserve investment; the product loop helps the team execute selected opportunities consistently and learn from the results.</p>
+
+          <h2>AI accelerates the work; people own the outcome</h2>
+          <p>AI agents assist with product intents, implementation, review, test analysis, documentation, knowledge maintenance, and status reporting. The team remains accountable for decisions and quality. AI accelerates artifact creation and analysis; people provide customer understanding, product judgment, technical judgment, and final approval.</p>
+          <p>The result is a development system designed to be faster, more traceable, and more learning-oriented—without sacrificing ownership or quality.</p>
+        </div>
+
+        <div class="article-tags">
+          <a class="badge badge-light" href="/tags/product-management/">Product Management</a>
+          <a class="badge badge-light" href="/tags/ai-product-loop/">AI Product Loop</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    (() => {
+      const output = document.getElementById('truetest-loop');
+      const stages = ['IDEATE','VALIDATE','PLAN','BUILD','DEPLOY','LEARN'];
+      const outcomes = ['Clear product intent','Validated experience','Executable delivery plan','Reviewed and tested feature','Documented production release','Adoption insight'];
+      let current = 0;
+      const draw = () => {
+        const line = stages.map((stage,index) => index === current ? `[* ${stage} *]` : `[  ${stage}  ]`).join(' -> ');
+        output.textContent = `                         TRUETEST PRODUCT LOOP\n\n${line}\n   ^${' '.repeat(Math.max(1,line.length-5))}|\n   +-------------------- customer learning --------------------+\n\nACTIVE  : ${stages[current]}\nOUTCOME : ${outcomes[current]}`;
+      };
+      draw();
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => { current = (current + 1) % stages.length; draw(); }, 1100);
+    })();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
