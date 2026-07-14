@@ -130,7 +130,7 @@
         output.textContent = `TRUETEST PRODUCT LOOP\n\n${top}\n       ^                       |\n       |                       v\n${bottom}\n\nACTIVE  : ${stages[current]}\nOUTCOME : ${outcomes[current]}`;
       };
       draw();
-      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => { current = (current + 1) % stages.length; draw(); }, 1100);
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(() => { current = (current + 1) % stages.length; draw(); }, 2500);
     })();
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
