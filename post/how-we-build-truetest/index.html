@@ -164,7 +164,7 @@
     (() => {
       const output = document.getElementById('truetest-loop');
       const stages = ['IDEATE','VALIDATE','PLAN','BUILD','DEPLOY','LEARN'];
-      const outcomes = ['Clear product intent','Validated experience','Executable delivery plan','Reviewed and tested feature','Documented production release','Adoption insight'];
+      const outcomes = ['Clear product intent','Validated experience','Executable delivery plan','Reviewed and tested feature','Release to production','Adoption insight'];
       let current = 0;
       const box = (index) => current === index ? `[* <span class="loop-active">${stages[index]}</span> *]` : `[ ${stages[index]} ]`;
       const draw = () => {
